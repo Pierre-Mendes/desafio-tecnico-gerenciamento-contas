@@ -16,7 +16,7 @@ Route::middleware('api')->prefix('api')->group(function () {
         ], StatusCodeInterface::STATUS_OK);
     });
 
-    Route::post('/conta', [ContaController::class, 'create']);
     Route::get('/conta', [ContaController::class, 'show']);
+    Route::post('/conta', [ContaController::class, 'create']);
     Route::post('/transacao', [TransacaoController::class, 'processarTransacao']);
 });
