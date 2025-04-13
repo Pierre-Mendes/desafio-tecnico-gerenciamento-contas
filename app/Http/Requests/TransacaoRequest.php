@@ -41,16 +41,16 @@ class TransacaoRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'forma_pagamento.required' => 'A forma de pagamento é obrigatória',
+            'forma_pagamento.required' => 'O campo: forma de pagamento é obrigatória',
             'forma_pagamento.in' => 'Forma de pagamento inválida (use P - Pix, C - Crédito ou D - Débito)',
 
-            'numero_conta.required' => 'O número da conta é obrigatório',
+            'numero_conta.required' => 'O campo: número da conta é obrigatório',
             'numero_conta.integer' => 'Número da conta inválido',
             'numero_conta.exists' => 'Conta não encontrada',
 
             'valor.required' => 'O valor é obrigatório',
             'valor.numeric' => 'O valor deve ser numérico',
-            'valor.min' => 'O valor mínimo é 0.01',
+            'valor.min' => 'O valor mínimo para realizar uma transação é de: 0.01',
             'valor.regex' => 'O valor deve ter no máximo 2 casas decimais'
         ];
     }
