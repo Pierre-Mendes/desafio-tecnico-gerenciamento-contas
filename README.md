@@ -68,7 +68,7 @@ Criação de endpoints para um sistema de gerenciamento bancário:
 
 ### ⚙️ Requisitos:
 - Docker e Docker Compose instalados
-- PHP 8.2 instalado
+- PHP ^8.2 instalado
 - MySQL instalado
 
 ### 🧭 Passo a Passo
