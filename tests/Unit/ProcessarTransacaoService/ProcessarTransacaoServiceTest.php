@@ -2,19 +2,19 @@
 
 namespace tests\Unit\ProcessarTransacaoService;
 
+use Tests\TestCase;
 use App\DTOs\ContaDTO;
 use App\DTOs\TransacaoDTO;
 use App\Enums\TiposPagamento;
-use App\Exceptions\Conta\ContaNaoEncontradaException;
-use app\Exceptions\Transacao\SaldoInsuficienteException;
+use PHPUnit\Framework\MockObject\Exception;
+use App\Strategies\TipoPagamento\PixStrategy;
+use App\Strategies\TipoPagamento\DebitoStrategy;
+use App\Strategies\TipoPagamento\CreditoStrategy;
 use App\Factories\TransacaoPorTipoPagamentoFactory;
 use App\Repositories\Conta\ContaRepositoryInterface;
 use App\Services\Transacao\ProcessarTransacaoService;
-use App\Strategies\TipoPagamento\CreditoStrategy;
-use App\Strategies\TipoPagamento\DebitoStrategy;
-use App\Strategies\TipoPagamento\PixStrategy;
-use PHPUnit\Framework\MockObject\Exception;
-use Tests\TestCase;
+use App\Exceptions\Conta\ContaNaoEncontradaException;
+use app\Exceptions\Transacao\SaldoInsuficienteException;
 
 class ProcessarTransacaoServiceTest extends TestCase
 {

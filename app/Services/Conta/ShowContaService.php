@@ -3,8 +3,8 @@
 namespace App\Services\Conta;
 
 use App\DTOs\ContaDTO;
-use App\Exceptions\Conta\ContaNaoEncontradaException;
 use App\Repositories\Conta\ContaRepositoryInterface;
+use App\Exceptions\Conta\ContaNaoEncontradaException;
 
 readonly class ShowContaService
 {

@@ -5,17 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Requests\ContaRequest;
-use App\Http\Requests\BuscarContaRequest;
-use App\Services\Conta\CreateContaService;
 use App\Services\Conta\ShowContaService;
-use App\Exceptions\Conta\ContaNaoEncontradaException;
+use App\Http\Requests\BuscarContaRequest;
 use Fig\Http\Message\StatusCodeInterface;
+use App\Services\Conta\CreateContaService;
+use App\Exceptions\Conta\ContaNaoEncontradaException;
 
 class ContaController extends Controller
 {
     public function __construct(
-        private readonly CreateContaService $createContaService,
-        private readonly ShowContaService $showContaService
+        private readonly ShowContaService   $showContaService,
+        private readonly CreateContaService $createContaService
     ) {}
 
     /**
@@ -55,11 +55,8 @@ class ContaController extends Controller
         try {
             $contaDTO = $this->createContaService->execute($request->validated());
             return response()->json($contaDTO->toArray(), StatusCodeInterface::STATUS_CREATED);
-        } catch (\DomainException | \InvalidArgumentException $e) {
-            return response()->json([
-                'success' => false,
-                'message' => $e->getMessage()
-            ], StatusCodeInterface::STATUS_BAD_REQUEST);
+        } catch (\DomainException|\InvalidArgumentException $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()], StatusCodeInterface::STATUS_BAD_REQUEST);
         }
     }
 

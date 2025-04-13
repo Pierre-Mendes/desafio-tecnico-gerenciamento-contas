@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\ContaController;
-use App\Http\Controllers\TransacaoController;
-use Fig\Http\Message\StatusCodeInterface;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContaController;
+use Fig\Http\Message\StatusCodeInterface;
+use App\Http\Controllers\TransacaoController;
 
 Route::get('/', static function () {
     return view('welcome');

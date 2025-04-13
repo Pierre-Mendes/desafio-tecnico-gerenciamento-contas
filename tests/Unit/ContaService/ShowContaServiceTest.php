@@ -2,13 +2,13 @@
 
 namespace tests\Unit\ContaService;
 
+use Tests\TestCase;
 use App\DTOs\ContaDTO;
-use App\Exceptions\Conta\ContaNaoEncontradaException;
-use App\Repositories\Conta\ContaRepositoryInterface;
 use App\Services\Conta\ShowContaService;
 use Fig\Http\Message\StatusCodeInterface;
 use PHPUnit\Framework\MockObject\Exception;
-use Tests\TestCase;
+use App\Repositories\Conta\ContaRepositoryInterface;
+use App\Exceptions\Conta\ContaNaoEncontradaException;
 
 class ShowContaServiceTest extends TestCase
 {

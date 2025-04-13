@@ -3,9 +3,9 @@
 namespace App\Factories;
 
 use App\Enums\TiposPagamento;
-use App\Strategies\TipoPagamento\CreditoStrategy;
-use App\Strategies\TipoPagamento\DebitoStrategy;
 use App\Strategies\TipoPagamento\PixStrategy;
+use App\Strategies\TipoPagamento\DebitoStrategy;
+use App\Strategies\TipoPagamento\CreditoStrategy;
 use App\Strategies\TipoPagamento\TipoPagamentoStrategy;
 
 readonly class TransacaoPorTipoPagamentoFactory

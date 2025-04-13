@@ -2,8 +2,8 @@
 
 namespace App\Repositories\Conta;
 
-use App\DTOs\ContaDTO;
 use App\Models\Conta;
+use App\DTOs\ContaDTO;
 use App\Repositories\Conta\ContaRepositoryInterface;
 
 class ContaRepositoryDatabase implements ContaRepositoryInterface

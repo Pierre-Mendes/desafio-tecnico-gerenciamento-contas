@@ -2,11 +2,11 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\ServiceProvider;
 use App\Factories\TransacaoPorTipoPagamentoFactory;
 use App\Repositories\Conta\ContaRepositoryDatabase;
 use App\Repositories\Conta\ContaRepositoryInterface;
 use App\Services\Transacao\ProcessarTransacaoService;
-use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {

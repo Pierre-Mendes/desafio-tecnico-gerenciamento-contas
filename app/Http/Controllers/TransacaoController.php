@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use App\DTOs\TransacaoDTO;
 use App\Enums\TiposPagamento;
-use App\Exceptions\Conta\ContaNaoEncontradaException;
-use App\Exceptions\Transacao\SaldoInsuficienteException;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TransacaoRequest;
-use App\Services\Transacao\ProcessarTransacaoService;
 use Fig\Http\Message\StatusCodeInterface;
-use Illuminate\Http\JsonResponse;
+use App\Exceptions\Conta\ContaNaoEncontradaException;
+use App\Exceptions\Transacao\SaldoInsuficienteException;
+use App\Services\Transacao\ProcessarTransacaoService;
 
 class TransacaoController extends Controller
 {

@@ -2,12 +2,12 @@
 
 namespace tests\Unit\ContaService;
 
-use App\DTOs\ContaDTO;
-use App\Repositories\Conta\ContaRepositoryInterface;
-use App\Services\Conta\CreateContaService;
-use Fig\Http\Message\StatusCodeInterface;
-use PHPUnit\Framework\MockObject\Exception;
 use Tests\TestCase;
+use App\DTOs\ContaDTO;
+use Fig\Http\Message\StatusCodeInterface;
+use App\Services\Conta\CreateContaService;
+use PHPUnit\Framework\MockObject\Exception;
+use App\Repositories\Conta\ContaRepositoryInterface;
 
 class CreateContaServiceTest extends TestCase
 {

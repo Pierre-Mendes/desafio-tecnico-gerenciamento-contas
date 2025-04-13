@@ -4,10 +4,10 @@ namespace App\Services\Transacao;
 
 use App\DTOs\ContaDTO;
 use App\DTOs\TransacaoDTO;
-use App\Exceptions\Conta\ContaNaoEncontradaException;
-use App\Exceptions\Transacao\SaldoInsuficienteException;
 use App\Factories\TransacaoPorTipoPagamentoFactory;
 use App\Repositories\Conta\ContaRepositoryInterface;
+use App\Exceptions\Conta\ContaNaoEncontradaException;
+use App\Exceptions\Transacao\SaldoInsuficienteException;
 
 readonly class ProcessarTransacaoService
 {
