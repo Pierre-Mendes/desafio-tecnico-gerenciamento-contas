@@ -19,10 +19,6 @@ enum TiposPagamento: string
 
     public function calcularValorComTaxa(float $valor): float
     {
-        if ($valor <= 0) {
-            throw new \InvalidArgumentException("Valor da transação precisa ser maior que zero!");
-        }
-
         return $valor * (1 + $this->getTaxaPorTipoPagamento());
     }
 }
