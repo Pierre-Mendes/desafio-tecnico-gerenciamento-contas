@@ -4,7 +4,7 @@
 
 # 🧪 Teste Técnico – Objective
 
-![PHP Version](https://img.shields.io/badge/PHP-8.2-blue)
+![PHP Version](https://img.shields.io/badge/PHP-8.4-blue)
 ![Laravel](https://img.shields.io/badge/Laravel-12-red)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-finalizado-brightgreen)
@@ -17,10 +17,11 @@ Este repositório contém a solução para o **teste técnico proposto pela empr
 
 ## 🎯 Desafio
 
-Criação de dois endpoints para um sistema de gerenciamento bancário:
+Criação de endpoints para um sistema de gerenciamento bancário:
 
-- 🔹 Um endpoint para **gerenciamento de contas**
-- 🔹 Um endpoint para **gerenciamento de transações**
+- 🔹 Um endpoint `Get` para **gerenciamento de contas**
+- 🔹 Um endpoint `Post` para **gerenciamento de contas**
+- 🔹 Um endpoint `Post` para **gerenciamento de transações**
 
 ### Requisitos:
 - Criar e fornecer informações sobre a conta
@@ -31,7 +32,7 @@ Criação de dois endpoints para um sistema de gerenciamento bancário:
 
 ## 🚀 Tecnologias e Ferramentas
 
-- **Linguagem:** PHP `^8.2`
+- **Linguagem:** PHP `^8.2` (Usei a versão `8.4`)
 - **Framework:** Laravel 12
 - **Banco de dados:** MySQL
 - **Containers:** Docker
@@ -90,12 +91,12 @@ docker-compose up -d
 cp .env.example .env
 ```
 
-- Acesse o container app
+- Para acessar o container docker execute:
 ```sh
-docker-compose exec app bash
+docker exec -it desafio-tecnico-objective_app_1 bash
 ```
 
-- Instale as dependências do projeto
+- No terminal instale as dependências do projeto
 ```sh
 composer install
 ```
@@ -105,15 +106,19 @@ composer install
 php artisan key:generate
 ````
 
-- Rodar as migrations
+- Dentro do `container docker`, execute as migrações para configurar o banco de dados:
 ```sh
 php artisan migrate
 ```
+- Dentro do `container docker`, ajuste as permissões do diretório `storage/` e `bootstrap/cache/`:
+```sh
+chmod 777 -Rf storage/ bootstrap/cache
+```
 
 ## 🌐 Acesso
-API: http://localhost:8000
+- API: http://localhost:8000/api
 
-PhpMyAdmin: http://localhost:8080
+- PhpMyAdmin: http://localhost:8080
 
 ## ✅ Testes
 Para rodar os testes automatizados com PHPUnit:
@@ -121,7 +126,8 @@ Para rodar os testes automatizados com PHPUnit:
 php artisan test
 ```
 ## 📄 Documentação da API
-Swagger UI: http://localhost:8000/docs/#/
+- ["Swagger UI"](http://localhost:8000/docs/#/)
+- ["Collections Postman"](https://documenter.getpostman.com/view/18126995/2sB2cYeMRa#3d6d410f-0496-41d4-a13b-66f7c4241a7d)
 
 # 👨‍💻 Autor
 Feito por [`Pierre Mendes Salatiel`](https://github.com/Pierre-Mendes)
