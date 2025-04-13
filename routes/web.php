@@ -9,14 +9,13 @@ Route::get('/', static function () {
     return view('welcome');
 });
 
-Route::get('/api', static function () {
-    return response()->json([
-        'message' => 'API REST desafio-tecnico-objective'
-    ], StatusCodeInterface::STATUS_OK);
-});
-
-
 Route::middleware('api')->prefix('api')->group(function () {
+    Route::get('/', static function () {
+        return response()->json([
+            'message' => 'API REST desafio-tecnico-objective'
+        ], StatusCodeInterface::STATUS_OK);
+    });
+
     Route::post('/conta', [ContaController::class, 'create']);
     Route::get('/conta', [ContaController::class, 'show']);
     Route::post('/transacao', [TransacaoController::class, 'processarTransacao']);
