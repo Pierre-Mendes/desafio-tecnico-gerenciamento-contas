@@ -1,0 +1,269 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Desafio-Tecnico_Objective",
+        "description": "Documentation for the Application API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000/api",
+            "description": "Servidor Local"
+        }
+    ],
+    "paths": {
+        "": {
+            "get": {
+                "summary": "",
+                "description": "",
+                "deprecated": false,
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/conta": {
+            "post": {
+                "summary": "Cria uma nova conta.",
+                "description": "",
+                "deprecated": false,
+                "responses": {
+                    "201": {
+                        "description": "\"Conta criada com sucesso\"",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Conta"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "\"Erro de valida\u00e7\u00e3o de campos ou Conta j\u00e1 existente\"",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Conta"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "numero_conta",
+                                    "saldo"
+                                ],
+                                "properties": {
+                                    "numero_conta": {
+                                        "type": "integer"
+                                    },
+                                    "saldo": {
+                                        "type": "number"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "conta"
+                ]
+            },
+            "get": {
+                "summary": "Exibe os dados de uma conta existente.",
+                "description": "",
+                "deprecated": false,
+                "responses": {
+                    "200": {
+                        "description": "\"Dados da conta retornados com sucesso\"",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Conta"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "\"Conta n\u00e3o encontrada\"",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Conta"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "numero_conta",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "tags": [
+                    "conta"
+                ]
+            }
+        },
+        "/transacao": {
+            "post": {
+                "summary": "Processa uma transa\u00e7\u00e3o.",
+                "description": "",
+                "deprecated": false,
+                "responses": {
+                    "201": {
+                        "description": "\"Transa\u00e7\u00e3o processada com sucesso\"",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Transacao"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "\"Saldo insuficiente ou conta n\u00e3o encontrada\"",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Transacao"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "forma_pagamento",
+                                    "numero_conta",
+                                    "valor"
+                                ],
+                                "properties": {
+                                    "forma_pagamento": {
+                                        "type": "string",
+                                        "enum": [
+                                            "P",
+                                            "C",
+                                            "D"
+                                        ]
+                                    },
+                                    "numero_conta": {
+                                        "type": "integer"
+                                    },
+                                    "valor": {
+                                        "type": "number"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "transacao"
+                ]
+            }
+        }
+    },
+    "tags": [],
+    "components": {
+        "schemas": {
+            "Conta": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "numero_conta": {
+                        "type": "object",
+                        "nullable": true,
+                        "additionalProperties": true,
+                        "description": "int"
+                    },
+                    "saldo": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "id",
+                    "numero_conta",
+                    "saldo"
+                ]
+            },
+            "Transacao": {
+                "type": "object",
+                "properties": {}
+            },
+            "User": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "email_verified_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "remember_token": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "id",
+                    "name",
+                    "email",
+                    "password"
+                ]
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}
