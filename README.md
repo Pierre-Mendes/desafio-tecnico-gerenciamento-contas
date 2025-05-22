@@ -127,7 +127,7 @@ php artisan test
 ```
 ## 📄 Documentação da API
 - ["Swagger UI"](http://localhost:8000/docs/#/)
-- ["Collections Postman"](https://documenter.getpostman.com/view/18126995/2sB2cYeMRa#3d6d410f-0496-41d4-a13b-66f7c4241a7d)
+- ["Collections Postman"](https://documenter.getpostman.com/view/18126995/2sB2cYeMRa)
 
 # 👨‍💻 Autor
 Feito por [`Pierre Mendes Salatiel`](https://github.com/Pierre-Mendes)
