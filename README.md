@@ -2,14 +2,14 @@
 
 ---
 
-# 🧪 Teste Técnico – Objective
+# 🧪 Teste Técnico
 
 ![PHP Version](https://img.shields.io/badge/PHP-8.4-blue)
 ![Laravel](https://img.shields.io/badge/Laravel-12-red)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-finalizado-brightgreen)
 
-Este repositório contém a solução para o **teste técnico proposto pela empresa Objective**, com o objetivo de demonstrar habilidades em:
+Este repositório contém a solução para o **teste técnico**, com o objetivo de demonstrar habilidades em:
 
 > **PHP · Laravel · SQL · POO · Design Patterns · Boas práticas de desenvolvimento**
 
@@ -75,10 +75,10 @@ Criação de endpoints para um sistema de gerenciamento bancário:
 
 - Clone Repositório
 ```sh
-git clone -b https://github.com/Pierre-Mendes/desafio-tecnico-objective.git desafio-tecnico-objective
+git clone -b https://github.com/Pierre-Mendes/desafio-tecnico-gerenciamento-contas.git desafio-tecnico-gerenciamento-contas
 ```
 ```sh
-cd desafio-tecnico-objective
+cd desafio-tecnico-gerenciamento-contas
 ```
 
 - Suba os containers do projeto
@@ -93,7 +93,7 @@ cp .env.example .env
 
 - Para acessar o container docker execute:
 ```sh
-docker exec -it desafio-tecnico-objective_app_1 bash
+docker exec -it desafio-tecnico-gerenciamento-contas_app_1 bash
 ```
 
 - No terminal instale as dependências do projeto
